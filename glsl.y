@@ -1297,7 +1297,7 @@ function_call_or_method	: function_call_generic { $$ = $1; }
 function_call_generic	: function_identifier LEFT_PAREN function_call_parameter_list RIGHT_PAREN
 				{ $$ = new_glsl_node(context, FUNCTION_CALL, $1, $3, NULL); }
 
-			| function_identifier LEFT_PAREN LEFT_PAREN
+			| function_identifier LEFT_PAREN RIGHT_PAREN
 				{ $$ = new_glsl_node(context, FUNCTION_CALL,
 					$1,
 					new_glsl_node(context, FUNCTION_CALL_PARAMETER_LIST, NULL),
